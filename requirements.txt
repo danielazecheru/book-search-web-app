@@ -1,0 +1,15 @@
+# for API requests 
+
+requests
+
+# for testing 
+
+pytest
+
+# for image display 
+
+IPython.display 
+
+# for OpenAI
+
+OpenAI
