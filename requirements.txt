@@ -8,7 +8,9 @@ pytest
 
 # for image display 
 
+ipython
 
 # for OpenAI
 
 openai
+
