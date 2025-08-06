@@ -4,7 +4,12 @@ import os
 load_dotenv()
 nyt_api_key = os.getenv("NYT_API_KEY")
 
+load_dotenv()
+openai_api_key= os.getenv("OPENAI_API_KEY")
+
 import requests
+
+from openai import OpenAI # type: ignore
 
 url = f"https://api.nytimes.com/svc/books/v3/lists/overview.json?api-key={nyt_api_key}"
 r = requests.get(url)
@@ -28,3 +33,15 @@ for book in books["results"]["books"]:
     print("Weeks spent on list:", book["weeks_on_list"])
     print("Buy on Amazon:", book["buy_links"][0]["url"])
     print( )
+
+
+book = input("Please enter a book you want to learn more about: ")
+
+client = OpenAI(api_key=openai_api_key)
+
+response = client.responses.create(
+    model="gpt-4.1",
+    input=f"Without giving any plot spoilers, summarize in no more than 3 sentences the book reviews for {book}"
+)
+
+print(response.output_text)
