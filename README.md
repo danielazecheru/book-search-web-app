@@ -16,5 +16,6 @@ conda activate book-search-web-app
 
 ## Install all required packages 
 
+``
 pip install -r requirements.txt
-
+``
