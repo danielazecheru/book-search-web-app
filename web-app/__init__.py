@@ -26,7 +26,6 @@ def results():
         description = book["description"]
         weeks = book["weeks_on_list"]
         amazon = book["buy_links"][0]["url"]
-        #display_list.append(f"{rank}. {title} by {author} - Description: {description} - Weeks spent on list: {weeks_on_list}")
         display_list.append({"title":title, "rank": rank, "weeks": weeks, "author": author, "description": description, "amazon": amazon})
    
     return render_template("results.html",
