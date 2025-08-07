@@ -19,3 +19,10 @@ conda activate book-search-web-app
 ``
 pip install -r requirements.txt
 ``
+
+## Run the book-search.py file from the local command line
+
+``
+python app/book-search.py
+``
+
