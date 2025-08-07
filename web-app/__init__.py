@@ -9,6 +9,10 @@ app = Flask(__name__)
 def home():
     return render_template("home.html")
 
+@app.route('/reviews')
+def reviews():
+    return render_template("reviews.html")
+
 @app.route('/results', methods=['POST'])
 def results():
 
