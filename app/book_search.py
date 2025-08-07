@@ -29,15 +29,8 @@ def fetch_bestselling_list(genre):
     url = f"https://api.nytimes.com/svc/books/v3/lists/{genre_encoded}.json?api-key={nyt_api_key}"
     r = requests.get(url)
     bestsellers = r.json()
-    display_list = ""
-    for book in bestsellers["results"]["books"]:
-        title = book["title"]
-        rank = book["rank"]
-        author = book["author"]
-        description = book["description"]
-        weeks_on_list = book["weeks_on_list"]
-        display_list += f"{rank}. {title} by {author} - Weeks spent on bestselling list: {weeks_on_list} - Description: {description} ------"
-    return display_list
+    return bestsellers
+    
 
 def get_book_reviews(book_title, book_author):
     client = OpenAI(api_key=openai_api_key)
@@ -60,3 +53,14 @@ if __name__ == "__main__":
         print("Weeks spent on list:", book["weeks_on_list"])
         print("Buy on Amazon:", book["buy_links"][0]["url"])
         print( )
+
+
+#display_list = ""
+#    for book in bestsellers["results"]["books"]:
+#        title = book["title"]
+#        rank = book["rank"]
+#        author = book["author"]
+#        description = book["description"]
+#        weeks_on_list = book["weeks_on_list"]
+#        display_list += f"{rank}. {title} by {author} - Weeks spent on bestselling list: {weeks_on_list} - Description: {description} ------"
+#    return display_list

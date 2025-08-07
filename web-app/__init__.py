@@ -16,9 +16,22 @@ def results():
 
     print(request.form)
 
+    bestselling_list = fetch_bestselling_list(user_choice)
+
+    display_list = []
+    for book in bestselling_list["results"]["books"]:
+        title = book["title"]
+        rank = book["rank"]
+        author = book["author"]
+        description = book["description"]
+        weeks = book["weeks_on_list"]
+        amazon = book["buy_links"][0]["url"]
+        #display_list.append(f"{rank}. {title} by {author} - Description: {description} - Weeks spent on list: {weeks_on_list}")
+        display_list.append({"title":title, "rank": rank, "weeks": weeks, "author": author, "description": description, "amazon": amazon})
+   
     return render_template("results.html",
         user_choice=user_choice,
-        bestselling_list = fetch_bestselling_list(user_choice), 
+        display_list = display_list
     )
 
 @app.route('/reviews')

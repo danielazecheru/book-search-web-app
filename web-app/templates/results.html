@@ -6,7 +6,17 @@
     <body>
         <h1>Selected Bestseller List</h1>
         <p><b>Genre</b>: {{ user_choice.upper() }}</p>
-        <p><b>Bestselling List</b>: {{ bestselling_list }}</p>
+        {% for item in display_list %}
+        <div class="item">
+            <p><b>Rank: </b>{{ item.rank }}<br>
+                <b>Title: </b>{{ item.title }}<br>
+                <b>Author: </b>{{ item.author }}<br>
+                <b>Description: </b>{{ item.description }}<br>
+                <b>Weeks spent on list: </b>{{ item.weeks }}<br>
+                <b>Buy on Amazon: </b><a href="{{item.amazon}}" target="_blank">here</a></p>
+        </div>
+        {% endfor %}
+        <br>
         <a href="/">
         <button>Go to Home Page</button>
         </a>
