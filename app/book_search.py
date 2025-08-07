@@ -31,7 +31,6 @@ def fetch_bestselling_list(genre):
     books = r.json()
     return books
 
-
 if __name__ == "__main__":
 
     genre = input("Please enter a genre you are interested in: ")
