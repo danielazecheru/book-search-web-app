@@ -26,7 +26,8 @@ def results():
         description = book["description"]
         weeks = book["weeks_on_list"]
         amazon = book["buy_links"][0]["url"]
-        display_list.append({"title":title, "rank": rank, "weeks": weeks, "author": author, "description": description, "amazon": amazon})
+        image = book["book_image"]
+        display_list.append({"title":title, "rank": rank, "weeks": weeks, "author": author, "description": description, "amazon": amazon, "image": image})
    
     return render_template("results.html",
         user_choice=user_choice,
