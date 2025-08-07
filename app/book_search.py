@@ -34,7 +34,9 @@ def fetch_bestselling_list(genre):
         title = book["title"]
         rank = book["rank"]
         author = book["author"]
-        display_list += f"{rank} - {title} by {author}\n"
+        description = book["description"]
+        weeks_on_list = book["weeks_on_list"]
+        display_list += f"{rank}. {title} by {author} - Weeks spent on bestselling list: {weeks_on_list} - Description: {description} ------"
     return display_list
 
 def get_book_reviews(book_title, book_author):
@@ -58,15 +60,3 @@ if __name__ == "__main__":
         print("Weeks spent on list:", book["weeks_on_list"])
         print("Buy on Amazon:", book["buy_links"][0]["url"])
         print( )
-
-
-    book = input("Please enter a book you want to learn more about: ")
-
-    client = OpenAI(api_key=openai_api_key)
-
-    response = client.responses.create(
-        model="gpt-4.1",
-        input=f"Without giving any plot spoilers, summarize in no more than 3 sentences the book reviews for {book}"
-    )
-
-    print(response.output_text)
