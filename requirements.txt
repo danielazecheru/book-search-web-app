@@ -17,3 +17,7 @@ openai
 # for secret credentials
 
 dotenv
+
+# packages for app:
+
+flask
