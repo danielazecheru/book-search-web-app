@@ -37,6 +37,14 @@ def fetch_bestselling_list(genre):
         display_list += f"{rank} - {title} by {author}\n"
     return display_list
 
+def get_book_reviews(book_title, book_author):
+    client = OpenAI(api_key=openai_api_key)
+    response = client.responses.create(
+        model="gpt-4.1",
+        input=f"Without giving any plot spoilers, summarize in no more than 3 sentences the book reviews for {book_title} by {book_author}"
+    )
+    return(response.output_text)
+
 
 if __name__ == "__main__":
 

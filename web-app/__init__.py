@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request
 
-from app.book_search import fetch_bestselling_list 
+from app.book_search import fetch_bestselling_list , get_book_reviews
 
 app = Flask(__name__)
 
@@ -35,7 +35,8 @@ def results2():
 
     return render_template("results2.html",
         user_choice1=book_choice,
-        user_choice2=author_choice,
+        user_choice2=author_choice, 
+        book_reviews=get_book_reviews(book_choice, author_choice) 
     )
 
 if __name__ == '__main__':
