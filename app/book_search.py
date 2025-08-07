@@ -36,7 +36,7 @@ def get_book_reviews(book_title, book_author):
     client = OpenAI(api_key=openai_api_key)
     response = client.responses.create(
         model="gpt-4.1",
-        input=f"Without giving any plot spoilers, summarize in no more than 3 sentences the book reviews for {book_title} by {book_author}"
+        input=f"Without giving any plot spoilers, summarize in no more than 3 sentences the book reviews for {book_title} by {book_author}. Use a narrative style, no dialogue with the user."
     )
     return(response.output_text)
 
