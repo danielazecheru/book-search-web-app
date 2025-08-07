@@ -36,8 +36,6 @@ if __name__ == "__main__":
 
     genre = input("Please enter a genre you are interested in: ")
 
-    print(r.status_code)
-    books = r.json()
     print("NYT Bestselling list for", genre)
     print( )
     for book in books["results"]["books"]:
