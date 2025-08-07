@@ -9,10 +9,6 @@ app = Flask(__name__)
 def home():
     return render_template("home.html")
 
-@app.route('/reviews')
-def reviews():
-    return render_template("reviews.html")
-
 @app.route('/results', methods=['POST'])
 def results():
 
@@ -25,6 +21,22 @@ def results():
         bestselling_list = fetch_bestselling_list(user_choice), 
     )
 
+@app.route('/reviews')
+def reviews():
+    return render_template("reviews.html")
+
+@app.route('/results2', methods=['POST'])
+def results2():
+
+    book_choice = request.form.get('book_title')
+    author_choice = request.form.get('book_author')
+
+    print(request.form)
+
+    return render_template("results2.html",
+        user_choice1=book_choice,
+        user_choice2=author_choice,
+    )
 
 if __name__ == '__main__':
 
