@@ -18,7 +18,7 @@ def results():
 
     return render_template("results.html",
         user_choice=user_choice,
-        bestselling_list = fetch_bestselling_list(user_choice)
+        bestselling_list = fetch_bestselling_list(user_choice), 
     )
 
 

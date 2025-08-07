@@ -28,8 +28,14 @@ def fetch_bestselling_list(genre):
             genre_encoded =list["list_name_encoded"]
     url = f"https://api.nytimes.com/svc/books/v3/lists/{genre_encoded}.json?api-key={nyt_api_key}"
     r = requests.get(url)
-    books = r.json()
-    return books
+    bestsellers = r.json()
+    display_list = ""
+    for book in bestsellers["results"]["books"]:
+        title = book["title"]
+        rank = book["rank"]
+        author = book["author"]
+        display_list += f"{rank} - {title} by {author}\n"
+    return display_list
 
 
 if __name__ == "__main__":
