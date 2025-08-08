@@ -3,21 +3,22 @@
         <head>
             <title>Get a book summary via chatGPT! </title>
         </head>
-        <body>
-            <h1>Input a book title and author to get a summary of reviews via chatGPT</h1>
+        <body style="background-color: rgb(231, 226, 235);">
+            <h1>Get a summary of book reviews</h1>
+            <p>Input a book title and author to get a summary of reviews via chatGPT. Powered by OpenAI API!</p>
 
             <form action="/results2" method="POST">
                 <label for="book_title">Enter your book</label>
                 <input type="text" id="book_title" name="book_title">
                 <label for="book_author">Enter your author</label> 
                 <input type="text" id="book_author" name="book_author">
-                <button type="submit">Submit</button>
+                <button type="submit" style="color:rgb(170, 53, 228)"><b>Submit</b></button>
             </form>
 
             <br>
             <br>
             <a href="/">
-            <button>Go to Home Page</button>
+            <button style="color:rgb(170, 53, 228)"><b>Go to Home Page</b></button>
             </a>
         </body>
     </html>
