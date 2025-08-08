@@ -38,7 +38,7 @@ jobs:
       env:
         # set environment variables to use during testing
         # ... using the repository secret values set securely via repo settings
-        MY_API_KEY: ${{ secrets.NYT_API_KEY }}
-        MY_API_SECRET: ${{ secrets.OPENAI_API_KEY }}
+        nyt_api_key: ${{ secrets.NYT_API_KEY }}
+        openai_api_key: ${{ secrets.OPENAI_API_KEY }}
       run: |
         pytest
