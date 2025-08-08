@@ -45,22 +45,20 @@ if __name__ == "__main__":
 
     genre = input("Please enter a genre you are interested in: ")
 
+    chosen_list=fetch_bestselling_list(genre)
+
     print("NYT Bestselling list for", genre)
     print( )
-    for book in books["results"]["books"]:
+    for book in chosen_list["results"]["books"]:
         print(book["rank"], "-", book["title"], "by", book["author"])
         print("Description:", book["description"])
         print("Weeks spent on list:", book["weeks_on_list"])
         print("Buy on Amazon:", book["buy_links"][0]["url"])
         print( )
+    
+    chosen_book = input("Please enter a book title you are interested in: ")
+    chosen_author = input("Please enter a book author you are interested in: ")
 
-
-#display_list = ""
-#    for book in bestsellers["results"]["books"]:
-#        title = book["title"]
-#        rank = book["rank"]
-#        author = book["author"]
-#        description = book["description"]
-#        weeks_on_list = book["weeks_on_list"]
-#        display_list += f"{rank}. {title} by {author} - Weeks spent on bestselling list: {weeks_on_list} - Description: {description} ------"
-#    return display_list
+    chosen_reviews=get_book_reviews(chosen_book,chosen_author)
+    print( )
+    print(chosen_reviews)
