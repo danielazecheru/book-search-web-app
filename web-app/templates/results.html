@@ -5,7 +5,7 @@
     </head>
     <body style="background-color:rgb(206, 206, 217)">
         <h1 style="color:rgb(114, 18, 177)">Selected Bestseller List: {{ user_choice.upper() }}</h1>
-        <p>List last updated:      Next update:      </p>
+        <p>Data provided by The New York Times. Visit <a href=https://www.nytimes.com>nytimes.com</a> for more information.</p>
         {% for item in display_list %}
         <div class="item">
             <p><b>Rank: </b>{{ item.rank }}<br>
