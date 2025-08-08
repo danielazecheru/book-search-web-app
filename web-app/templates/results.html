@@ -3,8 +3,8 @@
     <head>
         <title>Bestsellers</title>
     </head>
-    <body style="background-color:rgb(206, 206, 217)">
-        <h1 style="color:rgb(114, 18, 177)">Selected Bestseller List: {{ user_choice.upper() }}</h1>
+    <body style="background-color:rgb(221, 221, 226)">
+        <h1>Selected Bestseller List: {{ user_choice.upper() }}</h1>
         <p>Data provided by The New York Times. Visit <a href=https://www.nytimes.com target="_blank">nytimes.com</a> for more information.</p>
         {% for item in display_list %}
         <div class="item">
@@ -19,12 +19,10 @@
         {% endfor %}
         <br>
         <a href="/">
-        <button>Go to Home Page</button>
+        <button style="color:rgb(170, 53, 228)"><b>Go to Home Page</b></button>
         </a>
         <br>
-        <br>
-        <a href="/reviews">
-        <button>Go to Reviews Page</button>
-        </a>
+        <p>Get summary of book reviews by chatGPT: <a href="/reviews"><button style="color:rgb(170, 53, 228)"><b>Reviews</b></button></a>
+        </p>
     </body>
 </html>
