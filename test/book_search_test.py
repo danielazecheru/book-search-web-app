@@ -7,3 +7,24 @@ def test_list_fetch():
     test_list = fetch_bestselling_list("Hardcover Fiction")
     assert "results" in test_list
     assert "books" in test_list["results"]
+    assert "title" in test_list["results"]["books"][0]
+    assert "author" in test_list["results"]["books"][0]
+    assert "rank" in test_list["results"]["books"][0]
+    assert "description" in test_list["results"]["books"][0]
+    assert "book_image" in test_list["results"]["books"][0]
+    test_list = fetch_bestselling_list("Audio Fiction")
+    assert "results" in test_list
+    assert "books" in test_list["results"]
+    assert "title" in test_list["results"]["books"][0]
+    assert "author" in test_list["results"]["books"][0]
+    assert "rank" in test_list["results"]["books"][0]
+    assert "description" in test_list["results"]["books"][0]
+    assert "book_image" in test_list["results"]["books"][0]
+
+def test_reviews():
+    test_reviews = get_book_reviews("Frankenstein", "Mary Shelley")
+    assert isinstance(test_reviews, str)
+    test_reviews = get_book_reviews("", "Emily Henry")
+    assert isinstance(test_reviews, str)
+    test_reviews = get_book_reviews("Les Miserables", "")
+    assert isinstance(test_reviews, str)
