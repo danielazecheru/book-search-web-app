@@ -1,7 +1,5 @@
 # book-search-web-app 
 
-## Setup
-
 ## Create a virtual environment 
 
 ``
@@ -26,3 +24,14 @@ pip install -r requirements.txt
 python app/book-search.py
 ``
 
+## Run app in the local server from the command line using FLASK 
+
+``
+FLASK_APP=web-app flask run
+``
+
+## Testing using command line
+
+``
+pytest
+``
