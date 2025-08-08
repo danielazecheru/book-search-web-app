@@ -32,7 +32,8 @@ FLASK_APP=web-app flask run
 
 ## Visit on local server at: http://127.0.0.1:5000
 
-## Testing 
+
+## Testing using command line
 
 ``
 pytest
