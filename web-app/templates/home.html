@@ -3,8 +3,9 @@
         <head>
             <title>Welcome to our book search tool! </title>
         </head>
-        <body>
+        <body style="background-color:rgb(206, 206, 217)">
             <h1>Search for a New York Times bestseller</h1>
+            <p>Choose your genre below to get the latest New York Times bestsellers. Powered by the New York Times Book API!</p>
 
             <form action="/results" method="POST">
                 <label for="genre">Choose your genre:</label>
@@ -29,12 +30,12 @@
                     <option value="Young Adult Paperback">Young Adult Paperback</option>
                 </select>
 
-                <button type="submit">Submit</button>
+                <button type="submit" style="color: brown"><b>Submit</b></button>
             </form>
             <br>
             <br>
             <a href="/reviews">
-            <button>Go to Reviews Page</button>
+            <button>Get book reviews by chatGPT</button>
             </a>
 
         </body>
