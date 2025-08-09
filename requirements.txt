@@ -21,3 +21,7 @@ dotenv
 # packages for app:
 
 flask
+
+# packages used for the production server 
+
+gunicorn
